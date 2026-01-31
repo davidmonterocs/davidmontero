@@ -180,7 +180,7 @@
                     </div>
                 </div>
                 
-                <!-- BOTONES DE ACCIÓN PARA EL CV -->
+                <!-- BOTONES DE ACCIÓN PARA EL CV - MODIFICADO -->
                 <div class="action-buttons" style="margin-top: 3rem;">
                     <button class="btn btn-pdf view-pdf-btn" data-pdf="cv">
                         <i class="fas fa-eye"></i> Ver CV en PDF
@@ -209,9 +209,6 @@
                 <div style="text-align: center; margin-bottom: 4rem; max-width: 900px; margin-left: auto; margin-right: auto;">
                     <p style="font-size: 1.2rem; line-height: 1.7;">
                         Aquí presento algunos de mis proyectos y trabajos más relevantes. Cada porfolio representa un trabajo completo que he desarrollado en el área de marketing, publicidad y gestión de proyectos. Haz clic en cada tarjeta para explorar los detalles completos.
-                    </p>
-                    <p style="margin-top: 1rem; color: var(--accent-color); font-weight: bold;">
-                        <i class="fas fa-info-circle"></i> Selecciona los archivos PDF cuando se te solicite
                     </p>
                 </div>
                 
@@ -362,7 +359,7 @@
         <div class="portfolio-pdf-modal-content">
             <div class="portfolio-pdf-modal-header">
                 <h3 id="portfolioPdfTitle" style="margin: 0; color: var(--header-color);">
-                    <i class="fas fa-file-pdf"></i> Selecciona un archivo PDF
+                    <i class="fas fa-file-pdf"></i> Cargando porfolio...
                 </h3>
                 <div style="display: flex; gap: 1rem;">
                     <button class="btn btn-portfolio" id="backToBtn" style="padding: 0.7rem 1.5rem; font-size: 1rem;">
@@ -374,45 +371,16 @@
                 </div>
             </div>
             <div class="portfolio-pdf-modal-body" id="portfolioPdfContent">
-                <div id="pdfLoading" class="pdf-loading">
-                    <div id="pdfUploadArea" style="text-align: center; padding: 3rem;">
-                        <i class="fas fa-cloud-upload-alt" style="font-size: 4rem; color: var(--accent-color); margin-bottom: 1.5rem;"></i>
-                        <h3 style="color: var(--header-color); margin-bottom: 1rem; font-size: 1.5rem;">
-                            Selecciona un archivo PDF
-                        </h3>
-                        <p style="margin-bottom: 2rem; color: #666;">
-                            Haz clic para buscar el archivo PDF en tu computadora
-                        </p>
-                        <div style="margin-bottom: 2rem;">
-                            <input type="file" id="pdfFileInput" accept=".pdf" style="display: none;">
-                            <label for="pdfFileInput" class="btn" style="font-size: 1.1rem; padding: 1rem 2rem; cursor: pointer;">
-                                <i class="fas fa-folder-open"></i> Buscar archivo PDF
-                            </label>
-                        </div>
-                        <div id="currentPdfInfo" style="display: none; background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
-                            <p id="selectedFileName" style="margin: 0; font-weight: bold;"></p>
-                            <p id="selectedFileSize" style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;"></p>
-                        </div>
-                        <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
-                            <i class="fas fa-info-circle"></i> Solo se aceptan archivos PDF (.pdf)
-                        </p>
-                    </div>
+                <div id="pdfLoading" class="pdf-loading active">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1.5rem;"></i>
+                    <p style="font-size: 1.2rem;">Cargando porfolio...</p>
                 </div>
                 
-                <!-- PDF.js Viewer -->
-                <div id="pdfViewer" class="pdf-viewer"></div>
+                <iframe class="pdf-iframe" id="pdfIframe" src="" frameborder="0"></iframe>
             </div>
         </div>
     </div>
 
-    <!-- Inputs ocultos para cada PDF -->
-    <input type="file" id="cvPdfInput" accept=".pdf" style="display: none;">
-    <input type="file" id="bravonPdfInput" accept=".pdf" style="display: none;">
-    <input type="file" id="gumoPdfInput" accept=".pdf" style="display: none;">
-    <input type="file" id="fitnessPdfInput" accept=".pdf" style="display: none;">
-
-    <!-- PDF.js y script personalizado -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
