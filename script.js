@@ -1,6 +1,3 @@
-function isMobile() {
-    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-}
 // Navegación entre secciones
 document.addEventListener('DOMContentLoaded', function() {
     const navButtons = document.querySelectorAll('.nav-btn');
@@ -181,13 +178,8 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             // Cargar el PDF
-            if (isMobile()) {
-    window.open(pdfUrl, "_blank");
-} else {
-    pdfIframe.src = pdfUrl;
-    modal.classList.add("active");
-}
-
+            updatedPdfIframe.src = pdfFile;
+            portfolioPdfModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
     }
